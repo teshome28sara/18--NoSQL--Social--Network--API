@@ -125,7 +125,7 @@ const userController = {
                 res.status(404).json({ message: 'No user found with this userId' });
                 return;
             }
-            // remove userId from friendId's friend list
+            
             User.findOneAndUpdate(
                 { _id: params.friendId },
                 { $pull: { friends: params.userId } },
